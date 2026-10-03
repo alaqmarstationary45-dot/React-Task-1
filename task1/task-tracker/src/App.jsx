@@ -1,12 +1,23 @@
+import { useState } from "react"
+import TaskForm from "./components/TaskForm"
+import TaskItem from "./components/TaskItem"
+import TaskStats from "./components/TaskStats"
+
 function App() {
 
-  return (
-    <div><h1 className="text-4xl font-bold text-red-600">
-      Tailwind is Working!
-      assalam o alikum 
-    </h1>
-    <p>assalam</p></div>
-  )
+  const [tasks, settasks] = useState([])
+
+  function addtask(tasktext){
+    const newtask = {
+      id:Date.now , 
+      text : tasktext,
+      completed:false
+    }
+
+    settasks([...tasks,newtask])
+  }
+
+  
 }
 
 export default App
